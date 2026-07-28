@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0A0A">
+<title>Como instalar o Streak Saver</title>
+<style>
+  :root {
+    --red: #FE2C55;
+    --red-dark: #D91E44;
+    --bg: #0A0A0A;
+    --surface: #161618;
+    --surface-2: #1F1F22;
+    --border: #2A2A2E;
+    --text: #F4F4F5;
+    --muted: #A1A1AA;
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 20px 64px;
+  }
+
+  .wrap { max-width: 560px; margin: 0 auto; }
+
+  header {
+    text-align: center;
+    padding: 48px 0 8px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(254, 44, 85, 0.12);
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    letter-spacing: 0.2px;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, var(--red), var(--red-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(254, 44, 85, 0.35);
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: linear-gradient(145deg, var(--red), var(--red-dark));
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 18px 24px;
+    border-radius: var(--radius);
+    margin: 28px 0 8px;
+    box-shadow: 0 8px 24px rgba(254, 44, 85, 0.4);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .cta:active { transform: scale(0.98); box-shadow: 0 4px 14px rgba(254, 44, 85, 0.35); }
+
+  .safe-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  .safe-note strong { color: var(--text); font-weight: 600; }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 4px;
+    letter-spacing: -0.3px;
+  }
+
+  .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+
+  .step-num {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: rgba(254, 44, 85, 0.14);
+    color: var(--red);
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-body h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .step-body p { font-size: 14px; color: var(--muted); }
+  .step-body a { color: var(--red); text-decoration: none; font-weight: 600; }
+
+  .faq { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px 16px;
+  }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--red); font-size: 20px; font-weight: 700; }
+  details[open] summary::after { content: "\2013"; }
+
+  details p { font-size: 14px; color: var(--muted); padding: 0 0 14px; }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">🔥 App oficial</span>
+      <div class="logo">🎵</div>
+      <h1>Como instalar o Streak Saver</h1>
+      <p class="subtitle">Mantenha suas sequências (streaks) do TikTok sempre vivas. Siga o passo a passo abaixo — leva menos de um minuto.</p>
+    </header>
+
+    <a class="cta" href="https://github.com/BakonGG/asta-utils-apk/releases/latest">⬇ Baixar APK</a>
+
+    <div class="safe-note">
+      <span>🛡️</span>
+      <span><strong>É seguro e oficial.</strong> O download vem direto do repositório oficial do app no GitHub. Nenhum dado seu é enviado para terceiros.</span>
+    </div>
+
+    <h2>Passo a passo</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Toque em "Baixar APK"</h3>
+          <p>Use o botão <a href="https://github.com/BakonGG/asta-utils-apk/releases/latest">⬇ Baixar APK</a> acima. O download da versão mais recente começará automaticamente.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Abra o arquivo baixado</h3>
+          <p>Quando o download terminar, toque na notificação ou encontre o arquivo <strong>.apk</strong> na pasta Downloads e abra-o.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Permita a instalação</h3>
+          <p>Se aparecer um aviso, permita <strong>"Instalar de fontes desconhecidas"</strong> ou toque em <strong>"Instalar assim mesmo"</strong>. Isso é normal para apps fora da Play Store.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Conclua e abra o app</h3>
+          <p>Toque em <strong>"Instalar"</strong>, aguarde alguns segundos e depois em <strong>"Abrir"</strong>. Pronto — o Streak Saver está no seu celular!</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details>
+        <summary>Por que não está na Play Store?</summary>
+        <p>O Streak Saver é distribuído diretamente como APK para oferecer atualizações rápidas e recursos que as lojas de apps costumam restringir. É totalmente funcional e mantido pelos desenvolvedores oficiais.</p>
+      </details>
+      <details>
+        <summary>É seguro instalar?</summary>
+        <p>Sim. O arquivo vem do repositório oficial no GitHub, sem intermediários. O aviso do Android sobre "fontes desconhecidas" aparece para qualquer app instalado fora da Play Store — não indica problema com este app.</p>
+      </details>
+      <details>
+        <summary>Como recebo atualizações?</summary>
+        <p>O próprio app avisa quando há uma nova versão e faz a atualização para você. Você também pode voltar a esta página e baixar a versão mais recente a qualquer momento.</p>
+      </details>
+    </div>
+
+    <footer>
+      <p>Streak Saver &middot; App oficial &middot; <a href="https://github.com/BakonGG/asta-utils-apk/releases/latest">Repositório no GitHub</a></p>
+    </footer>
+  </div>
+</body>
+</html>
